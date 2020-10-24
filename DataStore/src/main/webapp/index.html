@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type"
+	content="application/xhtml+xml; charset=UTF-8" />
+<title>Employee Details</title>
+<script type="text/javascript">
+	function checkform() {
+		var f = document.forms["myForm"].elements;
+		var cansubmit = true;
+
+		for (var i = 0; i < f.length; i++) {
+		if (f[i].value.length == 0)
+				cansubmit = false;
+		}
+
+		if (cansubmit) {
+			document.getElementById('submitId').disabled = false;
+		} else {
+			document.getElementById('submitId').disabled = 'disabled';
+		}
+	}
+</script>
+    
+</head>
+
+<body>
+	<h1></h1>
+
+	<form name="myForm" action="/Home" method="post">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" id="NameId" name="Name"
+					placeholder="Enter Name" onKeyup="checkform()"></td>
+			</tr>
+			<tr>
+				<td>Department:</td>
+				<td><input type="text" id=DepartmentId name="Department"
+					placeholder="Enter Department" onKeyup="checkform()"></td>
+			</tr>
+			<tr>
+				<td>PhoneNumber:</td>
+				<td><input type="text" id=PhoneNumberId name="PhoneNumber"
+					placeholder="Enter PhoneNumber" onKeyup="checkform()"></td>
+			</tr>
+			<tr>
+				<td>EmailId:</td>
+				<td><input type="text" id=EmailId name="EmailId"
+					placeholder="Enter EmailId" onKeyup="checkform()"></td>
+			</tr>
+			<tr>
+				<td>EmpId:</td>
+				<td><input type="text" id=EmpId name="EmpId"
+					placeholder="Enter EmpId" onKeyup="checkform()"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" id="submitId" value="Add" disabled="disabled"></td>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+</html>
