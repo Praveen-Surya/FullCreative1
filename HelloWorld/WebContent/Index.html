@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<script type="text/javascript">
+	function checkform() {
+		var f = document.forms["myForm"].elements;
+		var cansubmit = true;
+
+		for (var i = 0; i < f.length; i++) {
+			if (f[i].value.length == 0)
+				cansubmit = false;
+		}
+
+		if (cansubmit) {
+			document.getElementById('submitId').disabled = false;
+		} else {
+			document.getElementById('submitId').disabled = 'disabled';
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<br>
+	<form name="myForm" action="HomeServlet" method="post">
+		<table>
+			<tr>
+				<td>UserName:</td>
+				<td><input type="text" id="UserNameId" name="UserName"
+					onKeyup="checkform()"></td>
+			</tr>
+
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" id=PasswordId name="Password"
+					onKeyup="checkform()"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" id="submitId" disabled="disabled"
+					value="Login"></td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+</html>
